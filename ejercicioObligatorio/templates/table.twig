@@ -1,0 +1,20 @@
+<p>La tabla debe ser {{  num  }} X  {{  num  }} </p>
+{% set n = 0 %}
+
+
+<form method="post" >
+<table border="3" cellspacing="1" width="10">
+    <input type="hidden" name="numeros" value="{{ num }}" />
+    {% for i in 1..num %}
+    <tr>
+        {% for j in 1..num %}
+        {%  set n = n+1 %}
+        <td><input type="number" name="{{ n }}" style="width:100px" placeholder="0" /></td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<input type="submit" value="Guardar" name="guardar">
+
+</form>
